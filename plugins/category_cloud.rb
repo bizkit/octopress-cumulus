@@ -1,3 +1,4 @@
+# encoding: utf-8
 # WP-Cumulus for Octopress, originally developed by weefselkweekje and LukeMorton for WordPress.
 # Ported to Octopress by Joseph Z. Chang.
 #
@@ -38,6 +39,7 @@
 # MIT License: http://opensource.org/licenses/MIT
 #
 
+require 'stringex'
 
 module Jekyll
 
@@ -110,7 +112,7 @@ module Jekyll
 
 
       lists.each do | item, counter |
-        url = cloud_dir + item.gsub(/_|\P{Word}/u, '-').gsub(/-{2,}/u, '-').downcase
+        url = cloud_dir + item.gsub(/_|\P{Word}/u, '-').gsub(/-{2,}/u, '-').downcase.to_url
         style = "font-size: #{10 + (40 * Float(counter)/max)}%"
 
         tagcloud << "<a href='#{url}' style='#{style}'>#{item}"
