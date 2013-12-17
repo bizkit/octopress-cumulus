@@ -1,17 +1,21 @@
+WP-Cumulus for Octopress, originally developed by weefselkweekje and LukeMorton for WordPress.                                                                                                                                     
+Ported to Octopress by Joseph Z. Chang.
+TagCanvas integration by Hyacinthe Cartiaux <Hyacinthe.Cartiaux@free.fr>.
 
-WP-Cumulus for Octopress, originally developed by weefselkweekje and LukeMorton for WordPress.
-Ported to Octopress by Joseph Chang.
+* [WP-Cumulus](http://wordpress.org/extend/plugins/wp-cumulus/)
+* [TagCanvas](http://www.goat1000.com/tagcanvas.php)
 
-Link to WP-Cumulus: http://wordpress.org/extend/plugins/wp-cumulus/
+=======================
 
 Description:
 ------------
-3D rotating tagcloud for Octopress, ported from WP-cumulus.
+
+Generate a javascript based dynamic tag cloud.
 
 Demo:
---------
-http://joseph.nlpweb.org    
-http://blog.ashwani.co.in
+-----
+
+* [hpc.uni.lu](https://hpc.uni.lu/blog/archives/)
 
 Syntax:
 -------
@@ -19,11 +23,11 @@ Syntax:
 
     OR
 
-    {% tag_cloud bgcolor:#ffffff tcolor1:#00aa00 tcolor2:#00dd00 hicolor:#ff3333 %}
+    {% category_cloud bgcolor:#ffffff tcolor1:#00aa00 tcolor2:#00dd00 hicolor:#ff3333 %}
 
 Example:
 --------
-In template files, add the following markups.
+In some template files, you can add the following markups.
 
 ### source/_includes/custom/asides/category_cloud.html ###
 
@@ -32,12 +36,24 @@ In template files, add the following markups.
         <span id="tag-cloud">{% tag_cloud bgcolor:#ffffff tcolor1:#00aa00 tcolor2:#00dd00 hicolor:#ff3333%}</span>
     </section>
 
+CSS:
+----
+
+You can define the style on the container, in example, width/height and centered:
+
+    myCanvasContainer {
+      width: 500px;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
 License:
----------
-WP-Cumulus is under GPLv3. However, original javascript and php code are not used, only tagcloud.swf
-is adopted. This ruby code is under MIT License.
+--------
 
-GPLv3: http://gplv3.fsf.org
+This ruby code is under MIT License.
+TagCanvas code is under LGPL v3
+
 MIT License: http://opensource.org/licenses/MIT
+GPLv3: http://gplv3.fsf.org
 
