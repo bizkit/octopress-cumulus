@@ -1,3 +1,4 @@
+# encoding: utf-8
 # WP-Cumulus for Octopress, originally developed by weefselkweekje and LukeMorton for WordPress.
 # Ported to Octopress by Joseph Z. Chang.
 # TagCanvas integration by Hyacinthe Cartiaux <Hyacinthe.Cartiaux@free.fr>.
@@ -58,6 +59,7 @@
 # GPLv3: http://gplv3.fsf.org
 #
 
+require 'stringex'
 
 module Jekyll
 
@@ -116,7 +118,7 @@ module Jekyll
       tagcloud = ''
 
       lists.each do | item, counter |
-        url = cloud_dir + item.gsub(/_|\P{Word}/u, '-').gsub(/-{2,}/u, '-').downcase
+        url = cloud_dir + item.gsub(/_|\P{Word}/u, '-').gsub(/-{2,}/u, '-').downcase.to_url
         weight = "#{10 + (40 * Float(counter)/max)}";
         tagcloud << "<li><a href=\"#{url}\" style=\"font-size: #{weight}px\">#{item}"
         tagcloud << "</a></li>"
